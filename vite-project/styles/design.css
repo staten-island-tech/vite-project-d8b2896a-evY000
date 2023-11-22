@@ -1,0 +1,10 @@
+
+body{
+    background-color: var(--primary);
+}
+.light{
+    --primary:blue
+}
+.dark{
+    --primary:red
+}
