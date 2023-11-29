@@ -1,4 +1,4 @@
-import '../styles/style.css ';
+import '../styles/style.css';
 
 const DOMSelectors = {
    color: document.querySelector('#color')
