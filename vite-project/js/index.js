@@ -1,11 +1,29 @@
 import '../styles/style.css';
-
+import {cards} from './main.js';
 const DOMSelectors = {
-   color: document.querySelector('#color')
+   color: document.querySelector('#color'),
+   Thing: document.getElementById("Card")
 }
+ // function populate(arr){
+cards.forEach(()=> {
+const card2 = (` <div id = "Card"> 
+<h1> ${cards.FirstName} </h1>
+<h2> ${cards.LastName} </h2> </div>`)
+DOMSelectors.Thing.insertAdjacentHTML('afterend', card2);
+})
+//}
 
 
+/* function filter(){
+   let button = document.querySelectorAll("#btn")
+   button.forEach((btn)=> btn.addEventListener("click", function(){
+      let category = btn.textContent.APG > 8()
+      let newArr = items.filter((cards)=> cards.type.includes(category))
+      document.querySelector(".parent").innerHTML = ""
+      populate(newArr)
+   }))} */
 
+filter()
 DOMSelectors.color.addEventListener("click", function(){
    if (document.body.classList.contains("dark")){
       document.body.classList.add("light");
@@ -15,8 +33,4 @@ DOMSelectors.color.addEventListener("click", function(){
          document.body.classList.remove("light");}
 
       });
-//const card = document.getElementById("card").innerHTML=card;
-//const filterplayers = card.filter((card)=> card.length > 4);
-//function greaterthanfour(){
- //   filterplayers.foreach(card => card.length < 4 === card.style.display === "none");
-//}
+
