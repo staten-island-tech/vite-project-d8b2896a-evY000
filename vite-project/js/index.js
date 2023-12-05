@@ -5,25 +5,41 @@ const DOMSelectors = {
    Thing: document.getElementById("Card")
 }
  // function populate(arr){
-cards.forEach(()=> {
-const card2 = (` <div id = "Card"> 
-<h1> ${cards.FirstName} </h1>
-<h2> ${cards.LastName} </h2> </div>`)
+cards.forEach((card)=> {
+   const FirstName = card.FirstName
+   const LastName = card.LastName
+   const Image = card.IMG
+const card2 = ` <div class = "Card">
+<h1> ${FirstName} </h1>
+<h2> ${LastName} </h2> 
+<img class ="imgs" src="${Image}"</div>`
 DOMSelectors.Thing.insertAdjacentHTML('afterend', card2);
 })
-//}
+DOMSelectors.btn.addEventListener("click", GOATFilter());
+function GOATFilter(){
+   const GOATS = cards.filter(card => card.GOAT.includes("Yes"));
+   DOMSelectors.Thing.innerHTML = "";
+   GOATS.forEach((card) =>{
+      const FirstName = card.FirstName
+   const LastName = card.LastName
+   const Image = card.IMG
+const card2 = ` <div class = "Card">
+<h1> ${FirstName} </h1>
+<h2> ${LastName} </h2> 
+<img class ="imgs" src="${Image}"</div>`
+DOMSelectors.Thing.insertAdjacentHTML('afterend', card2);  })
+}
+GOATFilter()
 
-
-/* function filter(){
+/*  function filter(){
    let button = document.querySelectorAll("#btn")
    button.forEach((btn)=> btn.addEventListener("click", function(){
-      let category = btn.textContent.APG > 8()
-      let newArr = items.filter((cards)=> cards.type.includes(category))
-      document.querySelector(".parent").innerHTML = ""
-      populate(newArr)
-   }))} */
+      let GOATFilter = cards.filter((cards)=> cards.GOAT.includes("Yes"),
+      document.querySelector(".parent").innerHTML = "",
+      populate(GOATFilter),
+ }))}
+ */
 
-filter()
 DOMSelectors.color.addEventListener("click", function(){
    if (document.body.classList.contains("dark")){
       document.body.classList.add("light");
