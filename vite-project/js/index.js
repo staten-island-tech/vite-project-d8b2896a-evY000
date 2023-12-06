@@ -22,9 +22,12 @@ function CardFilter(){
       DOMSelectors.app.innerHTML = ''
       const filterCards =  cards.filter((card) => card.GOAT.includes("Yes")).forEach((card) => this.insertAdjacentHTML("afterend",`<div> <h1>${card.FirstName} ${card.LastName} <img src=${card.IMG} class="imgs"></h1> </div>`));
       DOMSelectors.app.insertAdjacentHTML('beforeend',"The Goat",{filterCards} );
-   
+      Remove()
       });}
 CardFilter()
+function Remove(){
+   document.getElementById("btn").style.display = "none";
+}
 
 
 
