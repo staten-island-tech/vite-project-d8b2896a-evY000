@@ -29,6 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--primary);
+  
 }
 
 h1 {
@@ -58,6 +59,7 @@ h1 {
 
 .card {
   padding: 2em;
+
 }
 
 .read-the-docs {
@@ -103,8 +105,9 @@ button:focus-visible {
 }
 .dark{
   --primary:magenta
+  
 }
 .imgs{
-width: 500px;
+width: 200px;
 flex-wrap: wrap;
 }

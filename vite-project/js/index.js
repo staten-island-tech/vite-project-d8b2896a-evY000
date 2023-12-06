@@ -20,11 +20,9 @@ DOMSelectors.Thing.insertAdjacentHTML('afterend', card2);
 function CardFilter(){
    DOMSelectors.btn.addEventListener("click",function(){
       DOMSelectors.app.innerHTML = ''
-      let filterCards =  cards.filter((card) => card.GOAT.includes("Yes"));
-      const FilterName = filterCards.FirstName
-      console.log(FilterName)
-      let a = `<div class = "Card"> <h1>${FilterName}</h1> </div>`
-      DOMSelectors.app.insertAdjacentHTML('beforeend',  `${a}` );
+      const filterCards =  cards.filter((card) => card.GOAT.includes("Yes")).forEach((card) => this.insertAdjacentHTML("afterend",`<div> <h1>${card.FirstName} ${card.LastName} <img src=${card.IMG} class="imgs"></h1> </div>`));
+      DOMSelectors.app.insertAdjacentHTML('beforeend',"The Goat",{filterCards} );
+   
       });}
 CardFilter()
 
