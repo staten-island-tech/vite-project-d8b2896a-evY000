@@ -17,16 +17,17 @@ const card2 = ` <div class = "Card">
 <img class ="imgs" src="${Image}"</div>`
 DOMSelectors.Thing.insertAdjacentHTML('afterend', card2);
 })
-
 function CardFilter(){
    DOMSelectors.btn.addEventListener("click",function(){
       DOMSelectors.app.innerHTML = ''
-      const filterCards = cards.filter((card) => card.GOAT === "Yes");
-      const b = filterCards.FirstName
-      const a = `<div class = "Card"> <h1>${b}</h1> </div>`
+      let filterCards =  cards.filter((card) => card.GOAT.includes("Yes"));
+      const FilterName = filterCards.FirstName
+      console.log(FilterName)
+      let a = `<div class = "Card"> <h1>${FilterName}</h1> </div>`
       DOMSelectors.app.insertAdjacentHTML('beforeend',  `${a}` );
       });}
 CardFilter()
+
 
 
 
